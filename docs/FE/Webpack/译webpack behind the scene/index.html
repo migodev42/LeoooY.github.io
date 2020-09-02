@@ -6,16 +6,16 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">译webpack behind the scene | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="译webpack behind the scene | DocsShare"><meta data-react-helmet="true" name="description" content="[译] Webpack - Behind the Scenes"><meta data-react-helmet="true" property="og:description" content="[译] Webpack - Behind the Scenes"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/FE/Webpack/译webpack behind the scene"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/FE/Webpack/译webpack behind the scene"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
 <link rel="preload" href="/17896441.30e2172e.js" as="script">
-<link rel="preload" href="/17ac1549.5508642a.js" as="script">
+<link rel="preload" href="/17ac1549.841b8bd9.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -30,15 +30,15 @@ node_modules/webpack/lib/Compilation.js</p><h4><a aria-hidden="true" tabindex="-
 2-Module Template
 3-Dependency Templates</p><p>重复此过程，直到解决了所有依赖关系。 webpack的核心工作是解析文件并将所有内容捆绑在一个依赖图中。 这有助于webpack进行增量构建。 在webpack及其体系结构中提供的抽象使我们能够立即进行枢轴旋转并添加所需的任何功能。 因此，我们能够非常迅速地开发和发布。</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="tree-shaking-and-dead-code-elimination"></a>Tree shaking and Dead Code Elimination<a aria-hidden="true" tabindex="-1" class="hash-link" href="#tree-shaking-and-dead-code-elimination" title="Direct link to heading">#</a></h3><p>摇树或包含Live Code意味着Webpack静态使用语法来标识正在使用的内容，并将其仅捆绑在一起。 这意味着它将只捆绑那些在主index.js文件中导入或使用的函数或常量。</p><p>消除死代码是一种编译器优化，用于删除不影响程序结果的代码。</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#webpack背后实际上是如何工作的？" class="table-of-contents__link">webpack背后实际上是如何工作的？</a></li><li><a href="#tree-shaking-and-dead-code-elimination" class="table-of-contents__link">Tree shaking and Dead Code Elimination</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>
 <script src="/17896441.30e2172e.js"></script>
-<script src="/17ac1549.5508642a.js"></script>
+<script src="/17ac1549.841b8bd9.js"></script>
 </body>
 </html>

@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">index | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="index | DocsShare"><meta data-react-helmet="true" name="description" content="- Inside Fiber: an in-depth overview of the new reconciliation algorithm in React"><meta data-react-helmet="true" property="og:description" content="- Inside Fiber: an in-depth overview of the new reconciliation algorithm in React"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/FE/React/React Filber/index"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/FE/React/React Filber/index"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -23,11 +23,11 @@
 重要特性：<code>incremental rendering</code>增量渲染（将<code>render</code>工作切分为<code>chunk</code>并分发到多个帧中进行）</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="理解fiber"></a>理解<code>Fiber</code><a aria-hidden="true" tabindex="-1" class="hash-link" href="#理解fiber" title="Direct link to heading">#</a></h3><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="reconciliation"></a><code>Reconciliation</code><a aria-hidden="true" tabindex="-1" class="hash-link" href="#reconciliation" title="Direct link to heading">#</a></h4><p>当<code>React App</code>渲染时，会生成一个描述当前应用的<code>tree</code>并保存在内存中。在浏览器渲染时，则将当前的<code>vitual dom tree</code>映射(or translate)到浏览器<code>DOM</code>中。当使用<code>setState</code>等<code>API</code>进行更新时，又重新生成一个新的<code>new tree</code>,从而<code>diff</code>计算<code>new tree</code>和上一次<code>tree</code>的差异，将差异的部分重新渲染。</p><p>尽管Fiber是这部分算法的重写，但是整体的思路是一致了，提高了性能。</p><p>diff算法中：</p><ul><li>组件类型的变化会生成新的子树，react不会去diff，而是直接替换旧的子树</li><li>对于数组的diff是使用<code>keys</code>,<code>Keys</code>需要是稳定、可预测和唯一的</li></ul><p>React之所以能够<code>write once, run anywhere</code>就是因为<code>reconciliation</code>和<code>rendering</code>是分离的（理论上来说，开发者只需关心<code>reconciliation</code>）</p><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="scheduling"></a><code>Scheduling</code><a aria-hidden="true" tabindex="-1" class="hash-link" href="#scheduling" title="Direct link to heading">#</a></h4><p>计算、渲染等工作应该怎么按计划执行</p><p>这是fiber改进的地方</p><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="what-is-fiber"></a><code>what is fiber</code><a aria-hidden="true" tabindex="-1" class="hash-link" href="#what-is-fiber" title="Direct link to heading">#</a></h4><blockquote><p>A primary goal of Fiber is to enable React to take advantage of scheduling</p></blockquote><p>Fiber做了什么？
 将各种工作分成小块,<code>React</code>的工作被切分为<code>chunk</code>并分发到多个帧中进行。</p><blockquote><p>浏览器渲染<code>UI</code>时，如果<code>js</code>做了太多复杂的工作就会阻塞渲染，导致页面看起来像是<code>掉帧</code>了一样。而有些工作是不必要，可以被推迟。</p></blockquote><p><code>Fiber</code>为<code>React</code>组件重新实现了一套<code>调用堆栈</code>,以实现某些工作的分批处理，避免阻塞<code>UI渲染</code>。这个堆栈可以称为<code>virtual stack frame</code>虚拟栈帧</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#fiber简介" class="table-of-contents__link">Fiber简介</a></li><li><a href="#理解fiber" class="table-of-contents__link">理解<code>Fiber</code></a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>

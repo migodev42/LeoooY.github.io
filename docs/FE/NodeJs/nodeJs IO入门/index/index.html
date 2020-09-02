@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">index | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="index | DocsShare"><meta data-react-helmet="true" name="description" content="&lt;!--"><meta data-react-helmet="true" property="og:description" content="&lt;!--"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/FE/NodeJs/nodeJs IO入门/index"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/FE/NodeJs/nodeJs IO入门/index"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -28,11 +28,11 @@
 <code>setEncoding和string_decoder</code></p><ul><li><code>Buffer</code>与性能
 <code>Buffer</code>在文件<code>IO</code>与网络<code>IO</code>中运用广泛，尤其在网络传输中，它的性能举足轻重</li></ul><p>1通过预先转换静态内容为<code>Buffer</code>对象，可以有效的减少<code>CPU</code>的重复使用</p><p>2Node后端渲染的web应用，可以选择将页面中的静态内容和动态内容分离，静态内容转换为<code>Buffer</code>的方式，使性能得到提升</p><p>3文件读取时，由于文件自身是二进制数据，所以在不需要改变文件内容的场景下，尽量只读取<code>Buffer</code>，然后直接传输，不做额外的转换，避免损耗</p><p>4文件读取中的<code>highWaterMark</code>设置会影响<code>buffer</code>块大小，从而影响读取速度</p><p><strong><code>fs.createReadSteam()</code></strong>将文件读取到<code>Buffer</code>中</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#理解buffer" class="table-of-contents__link">理解Buffer</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>

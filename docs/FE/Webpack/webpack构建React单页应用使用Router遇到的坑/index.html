@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">webpack构建React单页应用使用Router遇到的坑 | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="webpack构建React单页应用使用Router遇到的坑 | DocsShare"><meta data-react-helmet="true" name="description" content="前言"><meta data-react-helmet="true" property="og:description" content="前言"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/FE/Webpack/webpack构建React单页应用使用Router遇到的坑"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/FE/Webpack/webpack构建React单页应用使用Router遇到的坑"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -26,11 +26,11 @@
 问题出现在直接使用链接去跳转到指定路径, 如使用<code>/xx/xx</code>试图进入页面就报错,找不到入口文件.</p><p>再看下报错信息,我去!!!  问题已经很明显了.
 入口文件在<code>/</code>目录下,当然在<code>/xx/</code>目录下找不到了...</p><p>最终我用<code>create-react-app</code>生成了一个<code>react</code>应用, 然后<code>yarn eject</code>在其<code>webpack.config</code>的<code>output</code>中找到了一个神奇的配置项解决了我的问题!!!</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">devtoolModuleFilenameTemplate: info =&gt;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">path.resolve(info.absoluteResourcePath).replace(/\\/g, &#x27;/&#x27;),</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div><blockquote><p>Point sourcemap entries to original disk location (format as URL on Windows)</p></blockquote><p>这个配置项是什么意思呢，去<code>webpack</code>官网查了查：</p><p>.........................</p><p>配置一个publicPath为<code>/</code>,问题解决了...........</p><p>尴尬</p><p>jijkljssssadadwwads const a= adasdasd assss</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#前言" class="table-of-contents__link">前言</a></li><li><a href="#发现问题" class="table-of-contents__link">发现问题</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>

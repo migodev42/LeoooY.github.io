@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">C++PrimerPlus[Craft] | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="C++PrimerPlus[Craft] | DocsShare"><meta data-react-helmet="true" name="description" content="第一章 预备知识"><meta data-react-helmet="true" property="og:description" content="第一章 预备知识"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/C++/C++PrimerPlus[Craft]"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/C++/C++PrimerPlus[Craft]"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -37,11 +37,11 @@ C语言中，是使用<code>malloc()</code>分配内存，在C++中仍然可以�
 如果C语言的宏执行了类似函数的功能，应该考虑将它们转化为C++内联函数</p><p>8.2 引用变量
 创建引用变量</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">int rats;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">int &amp; ratss=rats;  // 创建rats的alais引用变量</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                  // 此时rats和ratss的地址和值都相同</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                  // 操作其中一个都会同时影响两个变量</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div><p>引用变量感觉和指针差不多，实际上有区别的，引用更像是const 指针</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">int rats=101；</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">int &amp; ratsX=rats;       // 创建应用</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">int * ratsY=&amp; rats;     // 创建指针</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">ratsX 和 *ratsY 都是 rats的值 ： 101，</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">&amp;ratsX 和 ratsY 都是 rats的内存地址，</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">这些变量都可以操作</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div><p>引用更接近const指针，必须在创建时初始化，一旦与某个变量关联起来，就将一直效忠与它</p><div class="mdxCodeBlock_1XEh"><code></code></div><p>8.3 默认参数</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">char * left (const char * str, int n=1);</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#第一章-预备知识" class="table-of-contents__link">第一章 预备知识</a></li><li><a href="#第二章-开始学习c" class="table-of-contents__link">第二章 开始学习C++</a></li><li><a href="#第三章-处理数据" class="table-of-contents__link">第三章 处理数据</a></li><li><a href="#第八章-函数探幽（魔法）" class="table-of-contents__link">第八章 函数探幽（魔法）</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>

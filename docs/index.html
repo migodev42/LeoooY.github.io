@@ -6,16 +6,16 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">TCP3次握手和4次挥手 | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="TCP3次握手和4次挥手 | DocsShare"><meta data-react-helmet="true" name="description" content="TCP3次握手和4次挥手"><meta data-react-helmet="true" property="og:description" content="TCP3次握手和4次挥手"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
 <link rel="preload" href="/17896441.30e2172e.js" as="script">
-<link rel="preload" href="/8af6bc52.82840fc2.js" as="script">
+<link rel="preload" href="/8af6bc52.9795d490.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -25,15 +25,15 @@ TCP建立连接的过程叫做握手，握手需要在客户端和服务器之�
 为了防止A发出的已失效的连接请求报文突然又传送到了B而产生错误：</p><ul><li>正常情况：<ul><li>A发出连接请求，但是因请求报文丢失而未收到确认，于是A再重传一次连接请求。</li><li>重传的请求收到了确认，建立起了连接</li><li>数据传输完成，释放了连接。A一共发了两个连接请求，第一个丢失，第二个到达B，正常，未产生“已失效的连接请求报文”。</li></ul></li><li>异常情况：<ul><li>A发出的第一个连接请求并没有丢失，而是在因为某些原因滞留了，而延迟到达。</li><li>这本是一个失效的连接请求，但B收到此请求后会误以为是A发出的一个新的连接请求，于是向A发出确认报文，同意建立连接。</li><li>若此时不采用第三次确认再建立连接的话，只要B发出确认，新的连接就建立了。但由于这并不是A的有效连接请求，所以A不会理睬B的确认，也不会向B发送数据，B却以为新的运输连接已经建立了，并一直等待A发来的数据，B的许多资源就白白浪费了。</li><li>三次握手可以防止上述问题，在上述情况下，A不会向B的确认发出确认。B没有收到确认就知道A没有要求建立连接。</li></ul></li></ul><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="tcp的连接释放（tcp4次挥手）"></a>TCP的连接释放（TCP4次挥手）<a aria-hidden="true" tabindex="-1" class="hash-link" href="#tcp的连接释放（tcp4次挥手）" title="Direct link to heading">#</a></h3><p>TCP连接释放的过程更复杂</p><p><img src="/assets/images/TCP四次挥手-22dedd749195620d1c6e87a2f47c80f1.png"></p><ul><li>数据传输结束后，通信双方AB都可以释放连接，释放之前都处于 <code>ESTASLISHED</code> 状态，以A释放连接为例：</li><li>（第一次）A的应用进程向TCP发出连接释放报文段，并停止再发送数据，主动关闭TCP连接。<ul><li>A把连接释放报文段首部的终止控制位FIN置1，序号seq=u,u等于A前面已传送过的数据的最后一个字节的序号加1。</li><li>报文： <code>FIN=1 seq=u</code></li><li>此时A进入 <code>FIN-WAIT-1</code> 状态</li></ul></li></ul><blockquote><p>TCP标准规定，FIN报文段（即SYN=1的报文段）即使不携带数据，也要消耗一个掉序号seq</p></blockquote><ul><li><p>(第二次)B收到连接释放报文后即发出确认，</p><ul><li>确认号是 <code>ack=u+1</code> ,报文段自己的序号取 <code>seq=v</code> ,v等于B前面已传送过的数据的最后一个字节的序号加1</li><li>报文： <code>ACK=1 seq=v ack=u+1</code></li><li>此时B进入 <code>CLOSE-WAIT</code> 状态,TCP进程通知应用进程，A到B方向的连接就释放掉了。</li><li>A收到B发出的确认后（第二次挥手），就进入 <code>FIN-WAIT-2</code> 状态，等待B发出的连接释放报文段</li></ul></li><li><p>此时的TCP连接处于<strong>半关闭 half-close</strong>状态，即A已经没有数据要发送了，但B若发送数据，A仍要接收。</p></li><li><p>（第三次）若B已经没有要向A发送的数据，其应用进程就通知TCP释放连接。</p><ul><li>此时B的连接释放报文须使 <code>FIN=1</code> ，假设半关闭状态又发送了一些数据报，现在的序号为 <code>seq=w</code> ,且须重复上次的确认号 <code>ack=u+1</code></li><li>报文： <code>FIN=1 ACK=1 seq=w ack=u+1</code></li><li>此时B进入 <code>LAST-ACK 最后最后确认状态</code> ，等待A的确认    </li></ul></li><li><p>（第四次）A在收到B的连接释放报文段后，必须对此发出确认</p><ul><li>在确认报文段中把ACK置1，确认号 <code>ack=w+1</code> ,而自己的序号是 <code>seq=u+1</code></li><li>报文: <code>ACK=1 seq=u+1 ack=w+1</code></li><li>A进入 <code>TIME-WAIT 时间等待</code> 状态。注意，此时TCP连接还没有释放掉。必须经过<strong>时间等待计时器 TIME-WAIT-TIMER</strong>设置的时间2MSL后，A才进入到 <code>CLOSE</code> 状态</li><li>而B收到A的确认就进入了 <code>CLOSE</code> 状态</li></ul></li></ul><blockquote><p>时间MSL叫做<strong>最长报文段寿命 Maximun Segment Life</strong>, RFC 793建议设置为2分钟。TCP允许不同的实现可根据不同的具体情况使用更小的MSL值</p></blockquote><ul><li>A进入 <code>CLOSE</code> 状态，撤销相应的传输控制块TCB后，就结束了这次的TCP</li></ul><p>为什么A在 <code>TIME-WAIT</code> 状态必须等待2MSL的时间？</p><ul><li>1 为了保证A发送的最后一个ACK报文段能够到达B<ul><li>这个确认报文段(第四次挥手)可能丢失，而 <code>LAST-ACK</code> 状态的B若收不到这个确认就会超时重传(第三次挥手) <code>FIN+ACK</code> ，接着A重传(第四次挥手)一次确认，重置2MSL计时器。最后A和B都正常 <code>CLOSE</code> 。</li><li>若A在(第四次挥手)确认报文后不等待就进入 <code>CLOSE</code> ,但确认报文丢失时，就收不到B的重传(第三次挥手) <code>FIN+ACK</code> ，这样B就无法正常进入 <code>CLOSE</code> 状态。</li></ul></li><li>2 防止“已失效的连接请求报文”出现在本连接中<ul><li>A在发送完最后一个确认(第四次挥手)后，再经过2MSL，就可以使本次TCP连接中所产生的所有报文段都从网络中消失。下一次的新TCP就不会出现“已失效的连接请求报文”</li></ul></li></ul><p>除了时间等待计时器外，TCP还有个<strong>保活计时器 keepalive timer</strong>。设想这种情况：
 客户端与服务器建立了TCP连接，但后来客户端突然出现故障，显然服务器以后就不能再收到客户端的数据，因此需要有个机制使得服务器不要再白白等下去浪费资源，这个机制就是<strong>保活计时器</strong>。服务器每收到一次客户端数据就重置保活计时器，时间的设置通常是两小时。若两小时没有收到客户数据，服务器就发送一个探测报文，每隔75s发送一次，连续10个仍无响应就认为客户端出现故障，关闭这个TCP连接。</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="参考"></a>参考<a aria-hidden="true" tabindex="-1" class="hash-link" href="#参考" title="Direct link to heading">#</a></h3><ul><li>《计算机网络》谢希仁</li></ul></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/C++/doc-C++-C++PrimerNotes"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« C++PrimerNotes</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/FE/Browser/Blink内核是如何工作的/doc-Blink内核是如何工作的"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">[译] Blink内核是如何工作的? »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#tcp的连接建立（tcp3次握手）" class="table-of-contents__link">TCP的连接建立（TCP3次握手）</a></li><li><a href="#tcp的连接释放（tcp4次挥手）" class="table-of-contents__link">TCP的连接释放（TCP4次挥手）</a></li><li><a href="#参考" class="table-of-contents__link">参考</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>
 <script src="/17896441.30e2172e.js"></script>
-<script src="/8af6bc52.82840fc2.js"></script>
+<script src="/8af6bc52.9795d490.js"></script>
 </body>
 </html>

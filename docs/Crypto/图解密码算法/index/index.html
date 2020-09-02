@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">index | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="index | DocsShare"><meta data-react-helmet="true" name="description" content="第一章 环游密码世界"><meta data-react-helmet="true" property="og:description" content="第一章 环游密码世界"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/Crypto/图解密码算法/index"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/Crypto/图解密码算法/index"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -55,11 +55,11 @@ AES 120 192 256密钥长度规格</p><h2><a aria-hidden="true" tabindex="-1" cla
 中间人攻击</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="第六章-混合密码系统"></a>第六章 混合密码系统<a aria-hidden="true" tabindex="-1" class="hash-link" href="#第六章-混合密码系统" title="Direct link to heading">#</a></h2><p>使用公钥加密对称秘钥，对称秘钥加密消息，
 传送公钥加密后的秘钥和对称秘钥加密后的消息</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">A向B发送消息：</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">B事向A发送自己的公钥并确认对称加密方式，A使用公钥加密对称秘钥，用对称秘钥加密消息</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">B收到加密后的对称秘钥，和对称秘钥加密后的消息</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">B使用私钥解密对称秘钥，用对称秘钥解密消息</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="第九章-数字签名"></a>第九章 数字签名<a aria-hidden="true" tabindex="-1" class="hash-link" href="#第九章-数字签名" title="Direct link to heading">#</a></h2><p>数字签名就是将公钥密码“反过来用”而实现的</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">A 私钥 公钥</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">| </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">B 私钥 公钥</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">A、B交换公钥</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">A使用自己的私钥签名，B使用A的私钥验证签名</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">B使用自己的私钥加密，A使用B的公钥解密</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#第一章-环游密码世界" class="table-of-contents__link">第一章 环游密码世界</a></li><li><a href="#第二章-历史上的密码-写一篇别人看不懂的文章" class="table-of-contents__link">第二章 历史上的密码-写一篇别人看不懂的文章</a></li><li><a href="#第三章-对称密码（共享密钥密码）--用相同的密钥进行加密解密" class="table-of-contents__link">第三章 对称密码（共享密钥密码）- 用相同的密钥进行加密解密</a></li><li><a href="#第四章-分组密码的模式" class="table-of-contents__link">第四章 分组密码的模式</a></li><li><a href="#第五章-公钥密码" class="table-of-contents__link">第五章 公钥密码</a></li><li><a href="#第六章-混合密码系统" class="table-of-contents__link">第六章 混合密码系统</a></li><li><a href="#第九章-数字签名" class="table-of-contents__link">第九章 数字签名</a></li></ul></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>

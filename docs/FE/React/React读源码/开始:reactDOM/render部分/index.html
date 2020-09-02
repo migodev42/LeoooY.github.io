@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">render部分 | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="render部分 | DocsShare"><meta data-react-helmet="true" name="description" content="render函数做什么？"><meta data-react-helmet="true" property="og:description" content="render函数做什么？"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/FE/React/React读源码/开始:reactDOM/render部分"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/FE/React/React读源码/开始:reactDOM/render部分"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -23,11 +23,11 @@
 大概概括下是，通过递归将react VDOM(或者叫做react组件)渲染到真正的DOM中
 渲染的函数为<code>legacyRenderSubtreeIntoContainer</code></p><p>渲染函数<code>legacyRenderSubtreeIntoContainer</code>中，使用了<code>react-reconciler</code>(视图层和渲染层的协调器)的相关方法（<code>updateContainer</code>，<code>unbatchedUpdates</code>）来实现渲染。</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">ReactDOM </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">render{</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    legacyRenderSubtreeIntoContainer{</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        legacyCreateRootFromDOMContainer{</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">            from &#x27;ReactFiberReconciler&#x27;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">            unbatchedUpdates()</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">            updateContainer() </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">            {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">                enableNewReconciler</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">            }</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        }</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    }    </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">{</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    updateContainer</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">} from &#x27;react-reconciler/src/ReactFiberReconciler&#x27;</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>

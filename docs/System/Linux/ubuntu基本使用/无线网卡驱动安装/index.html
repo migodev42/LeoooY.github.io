@@ -6,11 +6,11 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.62">
 <title data-react-helmet="true">无线网卡驱动安装 | DocsShare</title><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="无线网卡驱动安装 | DocsShare"><meta data-react-helmet="true" name="description" content="- [ubuntu 18 无线网卡驱动rtl8811au](https://blog.csdn.net/daxus/article/"><meta data-react-helmet="true" property="og:description" content="- [ubuntu 18 无线网卡驱动rtl8811au](https://blog.csdn.net/daxus/article/"><meta data-react-helmet="true" property="og:url" content="https://leoooy.github.io//docs/System/Linux/ubuntu基本使用/无线网卡驱动安装"><link data-react-helmet="true" rel="shortcut icon" href="/img/leo.png"><link data-react-helmet="true" rel="canonical" href="https://leoooy.github.io//docs/System/Linux/ubuntu基本使用/无线网卡驱动安装"><link rel="stylesheet" href="/styles.fcc05d64.css">
 <link rel="preload" href="/styles.da09b0aa.js" as="script">
-<link rel="preload" href="/runtime~main.872dded8.js" as="script">
+<link rel="preload" href="/runtime~main.fcea67fc.js" as="script">
 <link rel="preload" href="/main.2f1d5848.js" as="script">
 <link rel="preload" href="/1.f45b894e.js" as="script">
 <link rel="preload" href="/2.a477ba05.js" as="script">
-<link rel="preload" href="/3.b78202e8.js" as="script">
+<link rel="preload" href="/3.32e8b994.js" as="script">
 <link rel="preload" href="/1be78505.89b8407a.js" as="script">
 <link rel="preload" href="/171.d3ef19ea.js" as="script">
 <link rel="preload" href="/935f2afb.43a6fc9a.js" as="script">
@@ -26,11 +26,11 @@ dpkg --get-selections|grep linux
 回滚内核
 <a href="https://blog.csdn.net/qq_38262728/article/details/88742198" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/qq_38262728/article/details/88742198</a></p></blockquote><p>ubuntu 升级不升内核</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockWrapper_2av3"><pre class="prism-code language-undefined codeBlock_2GNs" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"># Single Line</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"># The sleep is to give a little time for the lock file to release after updating.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo apt-mark hold linux-image-generic linux-headers-generic &amp;&amp; sudo apt-get update &amp;&amp; sleep 1 &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-mark unhold linux-image-generic linux-headers-generic</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"># Disable Kernel Updates</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo apt-mark hold linux-image-generic linux-headers-generic</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"># Updates Apt-Get Local DB</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo apt-get update</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"># Install Upgrades</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo apt-get upgrade -y</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"># Enable Kernel Updates</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">sudo apt-mark unhold linux-image-generic linux-headers-generic</span></div></pre><button type="button" aria-label="Copy code to clipboard" class="copyButton_1Zmi">Copy</button></div></div></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="text--center"><div>Copyright © 2020 LeoY233. Built with Docusaurus.</div></div></div></footer></div>
 <script src="/styles.da09b0aa.js"></script>
-<script src="/runtime~main.872dded8.js"></script>
+<script src="/runtime~main.fcea67fc.js"></script>
 <script src="/main.2f1d5848.js"></script>
 <script src="/1.f45b894e.js"></script>
 <script src="/2.a477ba05.js"></script>
-<script src="/3.b78202e8.js"></script>
+<script src="/3.32e8b994.js"></script>
 <script src="/1be78505.89b8407a.js"></script>
 <script src="/171.d3ef19ea.js"></script>
 <script src="/935f2afb.43a6fc9a.js"></script>
